@@ -1,34 +1,63 @@
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Krypt {
-    String fileInput = "ld";
-    String fileOutput = "df";
-    String Key = "cd";
-    public static void main (){
 
+    public static void main (){
+        View theView = new View();
+        Model theModel = new Model();
+        Controller theController = new Controller(theView,theModel);
+    //    theView.setVisible(true);
     }
 }
+
 class Model {
 // ta emot och beräkna
+    private String message;
+    private String key;
+    private String crypt;
     /**ta emot fil eller text*/
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
+    public String getCrypt() {
+        return crypt;
+    }
+
+    public void cryptString() {
+
+    }
     /**läsa fil eller text*/
 
-    /**fil/text ^ key*/
+    while (key.length() < message.length()){
+        key = expandKey(key);
+    }
 
+    /**fil/text ^ key*/
+    int fileOutput = fileInput^Key;
     /**spara output*/
 
 
 
 }
 class View {
-    /**input string/file*/
-    String fileinput = JOptionPane.showInputDialog();
-    /**input key*/
-    /***/
+    private JPanel panel;
+    private JTextField message;
+    private JTextField key;
+    private JTextField crypt;
+    private JButton cryptButton;
+
 
 }
 class Controller {
-    // transportera
+    Model model;
+    View view;
+
 }
