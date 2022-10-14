@@ -32,7 +32,7 @@ class Model {
     }
 
     public void cryptString() {
-
+    private String expandKey(String key)
     }
     /**läsa fil eller text*/
 
